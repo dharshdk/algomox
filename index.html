@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grocery Shopping Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="tutorial-overlay">
+        <p id="tutorial-text">Welcome to Smart Grocery Shopping Assistant!</p>
+        <button id="next-tutorial">Next</button>
+    </div>
+
+    <header>
+        <h1>Smart Grocery Shopping Assistant</h1>
+    </header>
+
+    <nav>
+        <button onclick="showTab('list-page')">Shopping List</button>
+        <button onclick="showTab('settings-page')">Settings</button>
+    </nav>
+
+    <main>
+        <section id="list-page" class="tab-content active">
+            <h2>Shopping List</h2>
+            <div id="budget-section">
+                <label for="budget-input">Set Budget:</label>
+                <input type="number" id="budget-input" placeholder="Enter your budget" />
+                <button onclick="updateBudget()">Set</button>
+                <p>Remaining Budget: ₹<span id="budget-remaining-list">0</span></p>
+            </div>
+            <div id="add-item">
+                <input type="text" id="item-name" placeholder="Item Name" />
+                <input type="number" id="item-price" placeholder="Price" />
+                <input type="number" id="item-stock" placeholder="Stock" />
+                <button onclick="addItem()">Add Item</button>
+            </div>
+            <div id="sort-options">
+                <label>Sort by:</label>
+                <button onclick="sortList('alphabetical')">Alphabetical</button>
+                <button onclick="sortList('price')">Price</button>
+            </div>
+            <ul id="shopping-list"></ul>
+        </section>
+
+        <section id="settings-page" class="tab-content">
+            <h2>Settings</h2>
+            <button onclick="changeTheme('light')">Light Theme</button>
+            <button onclick="changeTheme('dark')">Dark Theme</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
